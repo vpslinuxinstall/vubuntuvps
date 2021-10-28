@@ -131,6 +131,16 @@ RUN rm -f /etc/apt/sources.list && \
 	apt-get install -y /tmp/packages-microsoft-prod.deb && \
 	apt-get update && \
 	apt-get install -y powershell && \
+#XDM
+	wget https://github.com/subhra74/xdm/releases/download/7.2.11/xdm-setup-7.2.11.tar.xz -P /tmp && \
+	tar -xf /tmp/xdm-setup-7.2.11.tar.xz -C /tmp && \
+	sudo /tmp/install.sh && \
+#nvenc
+	git clone https://github.com/rokibulislaam/colab-ffmpeg-cuda.git  -P /tmp && \
+	mv /tmp/colab-ffmpeg-cuda/bin /usr/bin  && \
+#HANDBRAKE
+	add-apt-repository ppa:stebbins/handbrake-releases -y && \
+	apt-get install -y handbrake-cli && \
 #Ngrok
 	wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P /tmp && \
 	unzip /tmp/ngrok-stable-linux-amd64.zip -d /usr/bin && \
