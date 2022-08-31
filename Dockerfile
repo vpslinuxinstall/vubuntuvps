@@ -30,6 +30,8 @@ COPY . /app/.vubuntu
 
 SHELL ["/bin/bash", "-c"]
 
+RUN apt-get update -y
+RUN apt update
 RUN apt install -y aria2
 RUN apt install -y docker.io
 RUN rm -f /etc/apt/sources.list && \
