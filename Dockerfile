@@ -30,6 +30,8 @@ COPY . /app/.vubuntu
 
 SHELL ["/bin/bash", "-c"]
 
+RUN apt install -y aria2
+RUN apt install -y docker.io
 RUN rm -f /etc/apt/sources.list && \
 #All Official Focal Repos
 	bash -c 'echo -e "deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse\ndeb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse\ndeb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse\ndeb http://archive.canonical.com/ubuntu focal partner\ndeb-src http://archive.canonical.com/ubuntu focal partner" >/etc/apt/sources.list' && \
@@ -40,8 +42,6 @@ RUN rm -f /etc/apt/sources.list && \
 	software-properties-common \
 	apt-transport-https \
 	wget \
-	aria2 \
-	docker.io \
 	htop \
 	git \
 	curl \
