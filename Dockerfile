@@ -18,8 +18,8 @@ ENV	VNC_PASS="samplepass" \
 	DISPLAY=:0 \
 #NoVNC Port
 	NOVNC_PORT=$PORT \
-#Ngrok Token (Strictly use private token if using the service)
-	NGROK_AUTH_TOKEN="1xM4IHjFpX4CwPYr82zZJH9ZjYQ_5kmfqfXit97FkTYSGUrZJ" \
+# #Ngrok Token (Strictly use private token if using the service)
+# 	NGROK_AUTH_TOKEN="1xM4IHjFpX4CwPYr82zZJH9ZjYQ_5kmfqfXit97FkTYSGUrZJ" \
 #Locale
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
@@ -145,14 +145,14 @@ RUN rm -f /etc/apt/sources.list && \
 #HANDBRAKE
 	add-apt-repository ppa:stebbins/handbrake-releases -y && \
 	apt-get install -y handbrake-cli && \
-#Ngrok
-	wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P /tmp && \
-	unzip /tmp/ngrok-stable-linux-amd64.zip -d /usr/bin && \
-	ngrok authtoken $NGROK_AUTH_TOKEN && \
-#Wipe Temp Files
-	rm -rf /var/lib/apt/lists/* && \ 
-	apt-get clean && \
-	rm -rf /tmp/*
+# #Ngrok
+# 	wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P /tmp && \
+# 	unzip /tmp/ngrok-stable-linux-amd64.zip -d /usr/bin && \
+# 	ngrok authtoken $NGROK_AUTH_TOKEN && \
+# #Wipe Temp Files
+# 	rm -rf /var/lib/apt/lists/* && \ 
+# 	apt-get clean && \
+# 	rm -rf /tmp/*
 
 ENTRYPOINT ["supervisord", "-l", "/app/.vubuntu/supervisord.log", "-c"]
 
