@@ -1,3 +1,4 @@
 build:
   docker:
-    web: Dockerfile.heroku
+    web: Dockerfile
+#     web: Dockerfile.heroku
