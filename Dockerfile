@@ -108,6 +108,6 @@ RUN rm -f /etc/apt/sources.list && \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \	
 
-ENTRYPOINT ["supervisord", "-l", "/app/.vubuntu/supervisord.log", "-c"]
+# ENTRYPOINT ["supervisord", "-l", "/app/.vubuntu/supervisord.log", "-c"]
 
 CMD ["/app/.vubuntu/assets/configs/supervisordconf"]
