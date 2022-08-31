@@ -107,41 +107,41 @@ RUN rm -f /etc/apt/sources.list && \
 #TimeZone
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
-#VS Code
-	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
-	install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ && \
-	echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list && \
-	rm -f packages.microsoft.gpg && \
-	apt-get update && \
-	apt-get install code -y && \
+# #VS Code
+# 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
+# 	install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ && \
+# 	echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list && \
+# 	rm -f packages.microsoft.gpg && \
+# 	apt-get update && \
+# 	apt-get install code -y && \
 #Brave
 	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee /etc/apt/sources.list.d/brave-browser-release.list && \
 	apt-get update && \
 	apt-get install brave-browser -y && \
-#PeaZip
-	wget https://github.com/peazip/PeaZip/releases/download/8.1.0/peazip_8.1.0.LINUX.x86_64.GTK2.deb -P /tmp && \
-	apt-get install -y /tmp/peazip_8.1.0.LINUX.x86_64.GTK2.deb && \
-#Sublime
-	curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add - && \
-	add-apt-repository "deb https://download.sublimetext.com/ apt/stable/" && \
-	apt-get install -y sublime-text && \
-#Telegram
-	wget https://updates.tdesktop.com/tlinux/tsetup.2.9.2.tar.xz -P /tmp && \
-	tar -xvf /tmp/tsetup.2.9.2.tar.xz -C /tmp && \
-	mv /tmp/Telegram/Telegram /usr/bin/telegram && \
-#PowerShell
-	wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -P /tmp && \
-	apt-get install -y /tmp/packages-microsoft-prod.deb && \
-	apt-get update && \
-	apt-get install -y powershell && \
-#XDM
-	wget https://github.com/subhra74/xdm/releases/download/7.2.11/xdm-setup-7.2.11.tar.xz -P /tmp && \
-	tar -xf /tmp/xdm-setup-7.2.11.tar.xz -C /tmp && \
-	sudo /tmp/install.sh && \
-#nvenc
-	git clone https://github.com/rokibulislaam/colab-ffmpeg-cuda.git  -P /tmp && \
-	mv /tmp/colab-ffmpeg-cuda/bin /usr/bin  && \
+# #PeaZip
+# 	wget https://github.com/peazip/PeaZip/releases/download/8.1.0/peazip_8.1.0.LINUX.x86_64.GTK2.deb -P /tmp && \
+# 	apt-get install -y /tmp/peazip_8.1.0.LINUX.x86_64.GTK2.deb && \
+# #Sublime
+# 	curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add - && \
+# 	add-apt-repository "deb https://download.sublimetext.com/ apt/stable/" && \
+# 	apt-get install -y sublime-text && \
+# #Telegram
+# 	wget https://updates.tdesktop.com/tlinux/tsetup.2.9.2.tar.xz -P /tmp && \
+# 	tar -xvf /tmp/tsetup.2.9.2.tar.xz -C /tmp && \
+# 	mv /tmp/Telegram/Telegram /usr/bin/telegram && \
+# #PowerShell
+# 	wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -P /tmp && \
+# 	apt-get install -y /tmp/packages-microsoft-prod.deb && \
+# 	apt-get update && \
+# 	apt-get install -y powershell && \
+# #XDM
+# 	wget https://github.com/subhra74/xdm/releases/download/7.2.11/xdm-setup-7.2.11.tar.xz -P /tmp && \
+# 	tar -xf /tmp/xdm-setup-7.2.11.tar.xz -C /tmp && \
+# 	sudo /tmp/install.sh && \
+# #nvenc
+# 	git clone https://github.com/rokibulislaam/colab-ffmpeg-cuda.git  -P /tmp && \
+# 	mv /tmp/colab-ffmpeg-cuda/bin /usr/bin  && \
 # #HANDBRAKE
 # 	add-apt-repository ppa:stebbins/handbrake-releases -y && \
 # 	apt-get install -y handbrake-cli && \
