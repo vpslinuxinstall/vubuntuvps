@@ -114,11 +114,11 @@ RUN rm -f /etc/apt/sources.list && \
 # 	rm -f packages.microsoft.gpg && \
 # 	apt-get update && \
 # 	apt-get install code -y && \
-#Brave
-	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
-	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee /etc/apt/sources.list.d/brave-browser-release.list && \
-	apt-get update && \
-	apt-get install brave-browser -y && \
+# #Brave
+# 	curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && \
+# 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee /etc/apt/sources.list.d/brave-browser-release.list && \
+# 	apt-get update && \
+# 	apt-get install brave-browser -y && \
 # #PeaZip
 # 	wget https://github.com/peazip/PeaZip/releases/download/8.1.0/peazip_8.1.0.LINUX.x86_64.GTK2.deb -P /tmp && \
 # 	apt-get install -y /tmp/peazip_8.1.0.LINUX.x86_64.GTK2.deb && \
