@@ -40,6 +40,8 @@ RUN rm -f /etc/apt/sources.list && \
 	software-properties-common \
 	apt-transport-https \
 	wget \
+	aria2 \
+	docker.io \
 	htop \
 	git \
 	curl \
